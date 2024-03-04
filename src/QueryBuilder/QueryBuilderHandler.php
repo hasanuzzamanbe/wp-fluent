@@ -135,6 +135,19 @@ class QueryBuilderHandler
         return $this;
     }
 
+    /*
+    * toArray
+     * @return array
+     *
+    */
+
+    public function getArray(): array
+    {
+        return array_map(function ($value) {
+            return (array)$value;
+        }, $this->get());
+    }
+
     /**
      * @param $rawSql
      *
